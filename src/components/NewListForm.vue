@@ -1,7 +1,7 @@
 <template>
   <form v-on:submit.prevent="handleSubmit" id="new-list">
     <input v-model="name" type="text" v-on:keyup.v="onKeyV" />
-    <input type="submit" value="Add" />
+    <input type="submit" value="Add List" />
   </form>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   methods: {
     onKeyV: () => console.log("V pressed"),
     handleSubmit: function() {
-      this.onSubmit(this.$data);
+      this.onSubmit({ ...this.$data });
     }
   }
 };
