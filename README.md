@@ -1,5 +1,3 @@
-# todo-vue
-
 ## Project setup
 ```
 yarn install
