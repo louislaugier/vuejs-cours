@@ -1,7 +1,11 @@
 <template>
   <div id="list">
     <div class="header">
-      <h1>{{ name }}</h1>
+      <h1>
+        {{ name }}
+        <span v-if="cardCount > 0">{{ cardCount }}</span>
+        <span v-show="cardCount > 0">{{ cardCount }}</span>
+      </h1>
     </div>
     <div class="body">
       <ul>
@@ -20,6 +24,11 @@ export default {
     cards: {
       type: Array,
       default: () => []
+    }
+  },
+  computed: {
+    cardCount: function() {
+      return this.cards.length;
     }
   },
   inject: ["getList"]
